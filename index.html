@@ -360,8 +360,11 @@ footer .logo-footer span { color: var(--orange); }
 <nav class="categories" id="catNav">
   <a href="#" class="cat-chip active" data-cat="all"><span class="emoji">⚡</span> Semua</a>
   <a href="#" class="cat-chip" data-cat="skincare"><span class="emoji">🧴</span> Skincare</a>
-  <a href="#" class="cat-chip" data-cat="makeup"><span class="emoji">💄</span> Makeup</a>
   <a href="#" class="cat-chip" data-cat="parfum"><span class="emoji">🌸</span> Parfum</a>
+  <a href="#" class="cat-chip" data-cat="haircare"><span class="emoji">💇</span> Hair Care</a>
+  <a href="#" class="cat-chip" data-cat="facewash"><span class="emoji">🫧</span> Face Wash</a>
+  <a href="#" class="cat-chip" data-cat="sunscreen"><span class="emoji">☀️</span> Sunscreen</a>
+  <a href="#" class="cat-chip" data-cat="other"><span class="emoji">✨</span> Lainnya</a>
 </nav>
 
 <!-- FLASH SALE -->
@@ -403,17 +406,71 @@ footer .logo-footer span { color: var(--orange); }
 <script>
 // ── PRODUCT DATA ──────────────────────────
 const PRODUCTS = [
-  // Tunggu data produk dari OPET
+  // PARFUM PRIA
+  {name:"Parfum Pria Tahan Lama",cat:"parfum",sub:"pria",price:89000,was:150000,off:41,rating:4.9,sold:"2.1rb",link:"4ftQmmT9eP",img:"parfum",hot:true},
+  {name:"Parfum Pria Elegant",cat:"parfum",sub:"pria",price:75000,was:120000,off:38,rating:4.8,sold:"1.5rb",link:"1BJYcXnndC",img:"parfum"},
+  {name:"Parfum Cowok Fresh",cat:"parfum",sub:"pria",price:65000,was:99000,off:34,rating:4.7,sold:"980",link:"17bF8jURF",img:"parfum"},
+  // PARFUM WANITA
+  {name:"Parfum Wanita Wangi Tahan Lama",cat:"parfum",sub:"wanita",price:95000,was:160000,off:41,rating:4.9,sold:"3.2rb",link:"809slIt6A2",img:"parfum",hot:true},
+  {name:"Parfum Cewek Floral",cat:"parfum",sub:"wanita",price:85000,was:140000,off:39,rating:4.8,sold:"2.8rb",link:"7pqSZ2Nn9D",img:"parfum"},
+  {name:"Parfum Cewek Sweet",cat:"parfum",sub:"wanita",price:78000,was:130000,off:40,rating:4.8,sold:"1.9rb",link:"7AallzqGub",img:"parfum"},
+  {name:"Parfum Wanita Romantic",cat:"parfum",sub:"wanita",price:92000,was:155000,off:41,rating:4.9,sold:"2.5rb",link:"7VDcAfiMve",img:"parfum",hot:true},
+  {name:"Parfum Cewek Daily",cat:"parfum",sub:"wanita",price:70000,was:110000,off:36,rating:4.7,sold:"1.3rb",link:"5VSXnPE7RY",img:"parfum"},
+  {name:"Parfum Wanita Classy",cat:"parfum",sub:"wanita",price:88000,was:145000,off:39,rating:4.8,sold:"2.0rb",link:"9fI6lASYXQ",img:"parfum"},
+  {name:"Parfum Cewek Elegant",cat:"parfum",sub:"wanita",price:99000,was:165000,off:40,rating:4.9,sold:"1.7rb",link:"6L1en5YXCh",img:"parfum"},
+  // PARFUM UNISEX
+  {name:"Parfum Unisex Woody",cat:"parfum",sub:"unisex",price:82000,was:135000,off:39,rating:4.8,sold:"1.4rb",link:"8pizkUNHns",img:"parfum"},
+  {name:"Parfum Unisex Fresh",cat:"parfum",sub:"unisex",price:73000,was:120000,off:39,rating:4.7,sold:"1.1rb",link:"50WHCMGmNF",img:"parfum"},
+  {name:"Parfum Daily Clean",cat:"parfum",sub:"unisex",price:68000,was:100000,off:32,rating:4.7,sold:"890",link:"7fX2N6QTj6",img:"parfum"},
+  // SKINCARE
+  {name:"Skincare Exfoliasi Toner",cat:"skincare",sub:"exfoliasi",price:55000,was:89000,off:38,rating:4.8,sold:"1.6rb",link:"gNI1bT96g",img:"skincare",hot:true},
+  {name:"Skincare Pria Lengkap",cat:"skincare",sub:"pria",price:125000,was:200000,off:38,rating:4.9,sold:"2.3rb",link:"9ALq9GZiKp",img:"skincare",hot:true},
+  {name:"Moisturizer Hydrating",cat:"skincare",sub:"moisturizer",price:48000,was:75000,off:36,rating:4.8,sold:"3.1rb",link:"3LO3CaDC34",img:"skincare"},
+  {name:"Skincare Basic Set",cat:"skincare",sub:"basic",price:99000,was:160000,off:38,rating:4.9,sold:"4.2rb",link:"1108QLy37M",img:"skincare",hot:true},
+  {name:"Skincare Pria Simple",cat:"skincare",sub:"pria",price:85000,was:140000,off:39,rating:4.8,sold:"1.8rb",link:"BR1QyXP1i",img:"skincare"},
+  {name:"Whitening Serum Glow",cat:"skincare",sub:"whitening",price:65000,was:110000,off:41,rating:4.8,sold:"2.7rb",link:"2g8MPbDWPk",img:"skincare"},
+  {name:"Pembersih Komedo Ampuh",cat:"skincare",sub:"komedo",price:45000,was:72000,off:38,rating:4.7,sold:"1.5rb",link:"17bEoBygY",img:"skincare"},
+  {name:"Skincare Glowing Set",cat:"skincare",sub:"glowing",price:110000,was:180000,off:39,rating:4.9,sold:"3.5rb",link:"3g0tbhZyUS",img:"skincare",hot:true},
+  {name:"Retinol Toner Anti Aging",cat:"skincare",sub:"retinol",price:75000,was:125000,off:40,rating:4.8,sold:"1.2rb",link:"5AphOYRluo",img:"skincare"},
+  {name:"Peeling Serum Exfoliasi",cat:"skincare",sub:"peeling",price:58000,was:95000,off:39,rating:4.7,sold:"980",link:"3g0tbr8Ysv",img:"skincare"},
+  {name:"Cleanser Anti Jerawat",cat:"skincare",sub:"cleanser",price:42000,was:68000,off:38,rating:4.8,sold:"2.0rb",link:"3g0tbwS3jq",img:"skincare"},
+  {name:"Retinol Ampul Premium",cat:"skincare",sub:"retinol",price:95000,was:155000,off:39,rating:4.9,sold:"890",link:"5q5OC4yAlX",img:"skincare"},
+  {name:"Skin Barrier Repair",cat:"skincare",sub:"barrier",price:68000,was:110000,off:38,rating:4.8,sold:"1.4rb",link:"2g8MQV46G2",img:"skincare"},
+  // SUNSCREEN
+  {name:"Sunscreen SPF50 Ringan",cat:"sunscreen",sub:"sunscreen",price:45000,was:75000,off:40,rating:4.9,sold:"5.2rb",link:"40djzyJP1M",img:"sunscreen",hot:true},
+  {name:"Sunscreen Gel Tidak Lengket",cat:"sunscreen",sub:"sunscreen",price:52000,was:85000,off:39,rating:4.8,sold:"3.8rb",link:"9UygYRyjHd",img:"sunscreen"},
+  {name:"Sunscreen Moisturizer SPF45",cat:"sunscreen",sub:"sunscreen",price:48000,was:79000,off:39,rating:4.8,sold:"2.9rb",link:"9KfGMaB4hF",img:"sunscreen"},
+  // FACE WASH
+  {name:"Sabun Cuci Muka Pria",cat:"facewash",sub:"pria",price:35000,was:55000,off:36,rating:4.8,sold:"3.5rb",link:"AKXnXJTz5m",img:"facewash",hot:true},
+  {name:"Face Wash Pria Anti Jerawat",cat:"facewash",sub:"pria",price:38000,was:60000,off:37,rating:4.8,sold:"2.8rb",link:"4qCqzRIbOW",img:"facewash"},
+  // HAIR CARE
+  {name:"Hair Care Spray Penata Rambut",cat:"haircare",sub:"spray",price:55000,was:89000,off:38,rating:4.7,sold:"1.6rb",link:"3VhTPCrLjE",img:"haircare"},
+  {name:"Hair Care Serum Rambut",cat:"haircare",sub:"serum",price:48000,was:78000,off:38,rating:4.8,sold:"2.0rb",link:"9UygYYD50R",img:"haircare"},
+  {name:"Hair Care Vitamin Rambut",cat:"haircare",sub:"vitamin",price:42000,was:68000,off:38,rating:4.7,sold:"1.4rb",link:"W3rpqQQWB",img:"haircare"},
+  {name:"Hair Serum Anti Rontok",cat:"haircare",sub:"serum",price:55000,was:90000,off:39,rating:4.8,sold:"1.8rb",link:"40dk0b0y39",img:"haircare"},
+  {name:"Hair Care Mask Rambut",cat:"haircare",sub:"mask",price:38000,was:62000,off:39,rating:4.7,sold:"1.1rb",link:"1gFpEKYkEr",img:"haircare"},
+  // OTHER
+  {name:"Deodoran Roll On Tahan Lama",cat:"other",sub:"deodorant",price:25000,was:40000,off:38,rating:4.8,sold:"4.5rb",link:"30lCnryo1h",img:"other",hot:true},
+  {name:"Lip Gloss & Lipstik",cat:"other",sub:"cosmetic",price:45000,was:75000,off:40,rating:4.7,sold:"2.2rb",link:"50WHCi3Ys2",img:"other"},
 ];
 
 // ── HELPERS ───────────────────────────────
 const fmt = n => 'Rp' + n.toLocaleString('id-ID');
 const shopeeUrl = id => `https://s.shopee.co.id/${id}`;
 
+const PLACEHOLDER_IMG = {
+  parfum: `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f5e6ff"/><stop offset="100%" stop-color="#e8b4f8"/></linearGradient></defs><rect width="200" height="200" fill="url(#g)"/><text x="100" y="95" text-anchor="middle" font-size="50">🌸</text><text x="100" y="130" text-anchor="middle" font-size="11" fill="#8b5cf6" font-family="sans-serif">Parfum</text></svg>')}`,
+  skincare: `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e0f7fa"/><stop offset="100%" stop-color="#b2ebf2"/></linearGradient></defs><rect width="200" height="200" fill="url(#g)"/><text x="100" y="95" text-anchor="middle" font-size="50">🧴</text><text x="100" y="130" text-anchor="middle" font-size="11" fill="#00838f" font-family="sans-serif">Skincare</text></svg>')}`,
+  sunscreen: `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fff9c4"/><stop offset="100%" stop-color="#fff176"/></linearGradient></defs><rect width="200" height="200" fill="url(#g)"/><text x="100" y="95" text-anchor="middle" font-size="50">☀️</text><text x="100" y="130" text-anchor="middle" font-size="11" fill="#f57f17" font-family="sans-serif">Sunscreen</text></svg>')}`,
+  facewash: `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e8f5e9"/><stop offset="100%" stop-color="#a5d6a7"/></linearGradient></defs><rect width="200" height="200" fill="url(#g)"/><text x="100" y="95" text-anchor="middle" font-size="50">🫧</text><text x="100" y="130" text-anchor="middle" font-size="11" fill="#2e7d32" font-family="sans-serif">Face Wash</text></svg>')}`,
+  haircare: `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#fce4ec"/><stop offset="100%" stop-color="#f8bbd0"/></linearGradient></defs><rect width="200" height="200" fill="url(#g)"/><text x="100" y="95" text-anchor="middle" font-size="50">💇</text><text x="100" y="130" text-anchor="middle" font-size="11" fill="#c2185b" font-family="sans-serif">Hair Care</text></svg>')}`,
+  other: `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f3e5f5"/><stop offset="100%" stop-color="#ce93d8"/></linearGradient></defs><rect width="200" height="200" fill="url(#g)"/><text x="100" y="95" text-anchor="middle" font-size="50">✨</text><text x="100" y="130" text-anchor="middle" font-size="11" fill="#7b1fa2" font-family="sans-serif">Produk</text></svg>')}`
+};
+
 function renderCard(p) {
-  const imgSrc = p.img + '@resize_w200';
+  const imgSrc = PLACEHOLDER_IMG[p.img] || PLACEHOLDER_IMG.other;
   return `<a href="${shopeeUrl(p.link)}" target="_blank" rel="noopener" class="product-card" data-cat="${p.cat}">
-    <img class="product-img" src="${imgSrc}" alt="${p.name}" loading="lazy" width="200" height="200" onerror="this.style.background='linear-gradient(135deg,#f8f8f8,#eee)';this.src=''">
+    <img class="product-img" src="${imgSrc}" alt="${p.name}" loading="lazy" width="200" height="200">
     ${p.hot ? '<div class="product-badge">HOT 🔥</div>' : ''}
     ${p.off ? `<div class="product-badge" style="left:auto;right:8px;background:var(--pink)">${p.off}% OFF</div>` : ''}
     <div class="product-info">
